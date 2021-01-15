@@ -53,6 +53,14 @@ class ApiController extends Controller
         }
     }
     public function deleteStudent($id){
-
+        if(Student::where('id', $id)->exists()){
+            $student = Student::find($id);
+            $student->delete();
+            
+            return response("The Data Successfully deleted");
+                
+        }else{
+             return response("The ID is not Vallid");
+        }
     }
 }
