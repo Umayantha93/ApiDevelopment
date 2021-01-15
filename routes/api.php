@@ -26,7 +26,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('students', [ApiController::class, 'createStudent']);
-    // Route::get('students', [ApiController::class, 'getAllStudents']);
+Route::get('students', [ApiController::class, 'getAllStudents']);
     // Route::get('students/{id}', [ApiController::class, 'getStudent']);
    
     // Route::put('students/{id}', [ApiController::class, 'updateStudent']);

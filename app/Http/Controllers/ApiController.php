@@ -10,6 +10,11 @@ class ApiController extends Controller
     
     public function getAllStudents(){
 
+        $students = Student::all();
+
+    foreach($students as $student) { 
+        echo $student;
+    }
 
     }
     public function createStudent(Request $request){
