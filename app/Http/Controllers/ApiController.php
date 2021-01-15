@@ -29,6 +29,16 @@ class ApiController extends Controller
 
     public function getStudent($id){
 
+        
+        
+        if(Student::where('id', $id)->exists()){
+            $student = Student::findOrFail($id);
+            return $student;
+                
+        }else{
+             return response("The ID is not Vallid");
+        }
+
     }
     public function updateStudent(Request $request, $id){
 
